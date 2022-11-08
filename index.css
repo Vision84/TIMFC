@@ -193,7 +193,7 @@ h1 {
     transform: scaleX(1.001);
     transform-origin: 100% 50%;
   }
-  80% {
+  0% {
     transform: scaleX(0);
     transform-origin: 100% 50%;
   }
