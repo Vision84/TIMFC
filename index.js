@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 function loadPage(activePage) {
     activePage = activePage;
-    let contents = document.querySelectorAll(".main-content");
+    const contents = document.querySelectorAll(".main-content");
 
     for (let page = 0; page < contents.length; page++) {
         if (contents[page].id === activePage) {
