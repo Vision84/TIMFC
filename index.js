@@ -1,11 +1,10 @@
-let activePage = "home";
+let currentPage = "home";
 
 document.addEventListener('DOMContentLoaded', (event) => {
-    loadPage(activePage);
+    loadPage(currentPage);
 });
 
 function loadPage(activePage) {
-    activePage = activePage;
     const contents = document.querySelectorAll(".main-content");
 
     for (let page = 0; page < contents.length; page++) {
@@ -14,6 +13,8 @@ function loadPage(activePage) {
         } else {
             contents[page].style.display = "none";
         }
+
+        currentPage = activePage;
     }
 
     if (document.querySelector(".main-navigation-toggle").checked) {
