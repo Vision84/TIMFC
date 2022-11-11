@@ -1,6 +1,7 @@
-@import url("https://fonts.googleapis.com/css?family=Merriweather:900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Merriweather:400&display=swap");
 :root {
   --color-primary: #EEE2DF;
+  --color-background: #fefdfd;
   --color-entry: #DBC0BD;
   --color-secondary: #C89F9C;
   --duration: 1s;
@@ -21,6 +22,7 @@ body {
   font-family: var(--font-primary);
   font-size: var(--font-size);
   line-height: var(--line-height);
+  background-color: var(--color-background);
 }
 
 h1 {
@@ -28,6 +30,16 @@ h1 {
   font-family: var(--font-heading);
   font-size: calc(var(--font-size) + 6vmin);
   line-height: calc(var(--line-height) / 1.25);
+}
+
+h2 {
+  font-family: var(--font-heading);
+  font-size: calc(var(--font-size) + 3vmin);
+  line-height: 1;
+}
+
+p {
+  font-family: var(--font-primary);
 }
 
 .main-navigation-toggle {
@@ -136,7 +148,7 @@ h1 {
 
 .main-content {
   margin: 6rem auto;
-  max-width: 70ch;
+  max-width: 120ch;
   padding: 0 calc(var(--space) * 2);
   transform: translateX(0);
   transition: transform calc(var(--nav-duration) * 2) var(--ease);
@@ -148,9 +160,11 @@ h1 {
 .main-navigation-toggle:checked ~ label .icon--menu-toggle .icon-group {
   transform: translateX(100%);
 }
-.main-navigation-toggle:checked ~ .main-content {
-  transform: translateX(5%);
-  width: 94%;
+@media (min-width: 811px) {
+  .main-navigation-toggle:checked ~ .main-content {
+    transform: translateX(20%);
+    width: 94%;
+  }
 }
 .main-navigation-toggle:checked ~ .main-navigation {
   transition-duration: 0s;
@@ -177,6 +191,33 @@ h1 {
 }
 .main-navigation-toggle:checked ~ .main-navigation li:nth-child(4):after, .main-navigation-toggle:checked ~ .main-navigation li:nth-child(4) a {
   animation-delay: calc((var(--duration) / 2) * 4 * 0.125);
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+}
+@media (max-width: 811px) {
+  .card {
+    flex-direction: column;
+  }
+}
+
+#about-header {
+  width: 100%;
+  max-width: 60ch;
+  flex-grow: 3;
+}
+
+#timfc-about-heading {
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 @keyframes nav-bg {
