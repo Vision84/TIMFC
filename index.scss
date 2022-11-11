@@ -191,16 +191,6 @@ h1 {
   }
 }
 
-.fade-out {
-  opacity: 1;
-  transition: 0.5s;
-}
-
-.fade-in {
-  opacity: 0;
-  transition: 0.5s
-}
-
 @keyframes nav-bg {
   from { transform: translateX(-100%) skewX(-15deg) }
   to { transform: translateX(0) }
