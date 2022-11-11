@@ -2,7 +2,7 @@ let currentPage = "home";
 
 document.addEventListener('DOMContentLoaded', (event) => {
     const contents = document.querySelectorAll(".main-content");
-    
+
     for (let page = 0; page < contents.length; page++) {
         if (contents[page].id !== currentPage) {
             contents[page].style.display = "none";
@@ -30,7 +30,7 @@ async function loadPage(activePage) {
         }
     }
 
-    await new Promise(resolve => setTimeout(resolve, 400));
+    await new Promise(resolve => setTimeout(resolve, 450));
 
     for (let page = 0; page < contents.length; page++) {
         
