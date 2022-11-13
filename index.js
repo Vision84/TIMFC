@@ -1,4 +1,10 @@
-let currentPage = "home";
+let currentPage;
+
+if (localStorage.getItem("currentPage") === null) {
+    currentPage = "home";
+} else {
+    currentPage = localStorage['currentPage'];
+}
 
 document.addEventListener('DOMContentLoaded', (event) => {
     const contents = document.querySelectorAll(".main-content");
@@ -38,6 +44,7 @@ async function loadPage(activePage) {
             await unfade(contents[page]);
         }
         currentPage = activePage;
+        localStorage['currentPage'] = currentPage;
     }
 
 }

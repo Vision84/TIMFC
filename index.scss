@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather:400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 :root {
   --color-primary: #EEE2DF;
@@ -9,7 +10,7 @@
   --nav-duration: calc(var(--duration) / 4);
   --ease: cubic-bezier(0.215, 0.61, 0.355, 1);
   --space: 1rem;
-  --font-primary: 'Helvetica', sans-serif;
+  --font-primary: 'Roboto', sans-serif;
   --font-heading: 'Merriweather', serif;
   --font-size: 1.125rem;
   --line-height: 1.5;
@@ -36,7 +37,7 @@ h1 {
 h2 {
   font-family: var(--font-heading);
   font-size: calc(var(--font-size) + 3vmin);
-  line-height: 1;
+  line-height: calc(var(--line-height) / 1.25);
 }
 
 p {
@@ -211,26 +212,38 @@ p {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  text-align: center;
 
   @media (max-width: 811px) {
     flex-direction: column;
   }
+
+  @media (min-width: 811px) {
+    padding-bottom: 8vh;
+  }
+
+  gap: 50px;
 }
 
-#about-header {
+.card-image {
   width: 100%;
   max-width: 60ch;
   flex-grow: 3;
 }
 
-#timfc-about-heading {
-  text-align: center;
-  flex-grow: 1;
+.card-information-container {
+  padding: 10px;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
 }
+
+.learn-more-btn {
+  padding: 10px;
+  background-color: var(--color-background);
+  color: red;
+}
+
 
 @keyframes nav-bg {
   from { transform: translateX(-100%) skewX(-15deg) }
