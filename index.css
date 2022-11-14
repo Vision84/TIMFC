@@ -228,8 +228,37 @@ p {
 
 .learn-more-btn {
   padding: 10px;
-  background-color: var(--color-background);
   color: red;
+  text-decoration: none;
+}
+
+.identities-list {
+  display: flex;
+  justify-content: center;
+}
+@media (min-width: 811px) {
+  .identities-list {
+    flex-direction: row;
+  }
+}
+@media (max-width: 811px) {
+  .identities-list {
+    flex-direction: column;
+  }
+}
+
+.identity {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.identity-image {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
 }
 
 @keyframes nav-bg {
