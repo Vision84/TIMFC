@@ -232,9 +232,22 @@ p {
   text-decoration: none;
 }
 
+#identities-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
 .identities-list {
+  flex: 1;
+  left: 50%;
+  margin: auto;
   display: flex;
   justify-content: center;
+  gap: 20px;
+  max-width: 100%;
 }
 @media (min-width: 811px) {
   .identities-list {
@@ -250,15 +263,47 @@ p {
 .identity {
   flex: 1;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 2.5vw;
+  background-color: #f7f7f7;
+  padding: 3vh;
+  border-radius: 20px;
+}
+@media (min-width: 811px) {
+  .identity {
+    flex-direction: row;
+  }
+}
+@media (max-width: 811px) {
+  .identity {
+    flex-direction: column;
+  }
 }
 
 .identity-image {
-  width: 200px;
-  height: 300px;
+  width: 150px;
+  height: 225px;
   object-fit: cover;
+}
+@media (min-width: 1175px) {
+  .identity-image {
+    width: 200px;
+    height: 300px;
+  }
+}
+
+.identity-description {
+  top: 100%;
+  max-width: 240px;
+  text-align: left;
+  font-size: calc(var(--font-size) - 0.25rem);
+  padding-bottom: 5vh;
+}
+@media (min-width: 1175px) {
+  .identity-description {
+    max-width: 400px;
+  }
 }
 
 @keyframes nav-bg {
