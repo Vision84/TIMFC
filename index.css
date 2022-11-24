@@ -306,6 +306,22 @@ p {
   }
 }
 
+.mapouter {
+  position: relative;
+  text-align: right;
+  height: 400px;
+}
+@media (min-width: 1175px) {
+  .mapouter {
+    width: 600px;
+  }
+}
+@media (max-width: 1175px) {
+  .mapouter {
+    width: 100%;
+  }
+}
+
 @keyframes nav-bg {
   from {
     transform: translateX(-100%) skewX(-15deg);
