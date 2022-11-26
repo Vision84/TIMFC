@@ -29,24 +29,25 @@ async function loadPage(activePage) {
         document.querySelector(".main-navigation-toggle").checked = false;
     }
 
-    for (let page = 0; page < contents.length; page++) {
+    if (currentPage !== activePage) {
+        for (let page = 0; page < contents.length; page++) {
         
-        if (contents[page].id !== activePage) {
-            await fade(contents[page]);
+            if (contents[page].id !== activePage) {
+                await fade(contents[page]);
+            }
+        }
+    
+        await new Promise(resolve => setTimeout(resolve, 450));
+    
+        for (let page = 0; page < contents.length; page++) {
+            
+            if (contents[page].id === activePage) {
+                await unfade(contents[page]);
+            }
+            currentPage = activePage;
+            localStorage['currentPage'] = currentPage;
         }
     }
-
-    await new Promise(resolve => setTimeout(resolve, 450));
-
-    for (let page = 0; page < contents.length; page++) {
-        
-        if (contents[page].id === activePage) {
-            await unfade(contents[page]);
-        }
-        currentPage = activePage;
-        localStorage['currentPage'] = currentPage;
-    }
-
 }
 
 async function unfade(element) {
